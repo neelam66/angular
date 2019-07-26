@@ -1,0 +1,22 @@
+<h2> Academics</h2>
+<!-- <p>{{academicCtrl.studentAcademicData}}</p> -->
+
+
+<table class="personal">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>Roll_No</th>
+
+        <th>Marks</th>
+    </tr>
+
+<tr ng-repeat = "student in academicCtrl.studentAcademicData |  filter: { id : academicCtrl.studentId }">    
+        <td>{{student.id }}</td>
+        <td>{{student.rollno}}</td>
+        <td>{{student.marks}}</td>
+       
+        </tr>
+</table>
+<p>{{academicCtrl.parentData}}</p>

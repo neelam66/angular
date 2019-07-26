@@ -1,0 +1,30 @@
+<h2>Personal Data</h2>  
+   <p>
+       <!-- {{parentCtrl.parentName}} -->
+       {{ parentCtrl.studentData}}
+
+       <input type = text ng-model = "searchStudent">
+       <table>
+           <tr>
+               <th>Id</th>
+               <th>First Name</th>
+               <th>Last Name</th>
+               <th>City</th>
+               <th>Rollno</th>
+               <th>Marks</th>
+           </tr>
+          
+      
+       <!-- here we are useing inbuild filter named filter -->
+            <tr ng-repeat = "student in parentCtrl.studentPersonalData |  filter: { id : searchStudent }">    
+               <td>{{student.id }}</td>
+               <td>{{student.fname | uppercase}}</td>
+               <td>{{student.lname  }}</td>
+               <td>{{student.city}}</td>
+               <td>{{student.rollno}}</td>
+               <td>{{student.marks}}</td>
+           </tr>
+</table>
+      
+       <academic-component student-id=searchStudent parent-Data="parentCtrl.studentPersonalData"></academic-component>
+   </p>
